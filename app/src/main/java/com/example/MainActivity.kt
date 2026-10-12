@@ -234,4 +234,16 @@ fun PublicPulseApp(
             }
         )
     }
+
+    if (uiState.showAddCelebrityDialog) {
+        com.example.ui.components.AddCelebrityFromWikiDialog(
+            currentCount = uiState.storageStats.celebrityCount,
+            maxLimit = uiState.storageStats.maxCelebrityLimit,
+            searchResults = uiState.wikiSearchResults,
+            isSearching = uiState.isSearchingWiki,
+            onSearch = { viewModel.searchWikipedia(it) },
+            onAdd = { title, cat -> viewModel.addCelebrityFromWikipedia(title, cat) },
+            onDismiss = { viewModel.setShowAddCelebrityDialog(false) }
+        )
+    }
 }

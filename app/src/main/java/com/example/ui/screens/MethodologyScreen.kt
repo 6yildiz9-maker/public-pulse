@@ -15,6 +15,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Archive
 import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Functions
@@ -203,6 +204,33 @@ fun MethodologyScreen(
             BulletItem("Doğrulanmamış İddialar Yasaktır: Yargı kararı veya teyitli kaynak olmadan sosyal medya dedikoduları skor girdisi olamaz.")
             BulletItem("Düzeltme & İtiraz Kanalı (Right of Reply): Sanatçı ve sporcu temsilcileri profillerine şeffaf düzeltme notu ekleyebilir.")
             BulletItem("Haftalık Hesaplama: Hata payını azaltmak ve spekülasyonu önlemek için skorlar haftalık döngüyle kilitlenir.")
+        }
+
+        Spacer(modifier = Modifier.height(14.dp))
+
+        // 5. Tarama Verisi Mimarisi & Sıkıştırma
+        MethodologySection(
+            icon = Icons.Default.Archive,
+            title = "5. Tarama Verileri, Sıkıştırma & 1000 Kişi Mimarisi",
+            accentColor = PopularityCyan
+        ) {
+            Text(
+                text = "Puanlama için yapılan tarama verilerini tutmak şart mıdır?",
+                fontSize = 13.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.White
+            )
+            Text(
+                text = "EVET, kesinlikle tutulmalıdır. Ancak ham veri değil, işlenmiş ve azami sıkıştırılmış kütük olarak saklanır:",
+                fontSize = 11.sp,
+                color = Color.LightGray
+            )
+            Spacer(modifier = Modifier.height(6.dp))
+            BulletItem("Denetim İzi & İtiraz Güvencesi: Bir skora itiraz edildiğinde o tarihteki gerçek Wikimedia görüntülenme sayısı ve oy histogramı ispatlanabilir olmalıdır.")
+            BulletItem("Devre Kesici Güvencesi: Haftalık ve 24 saatlik ±8 puan sınırının aşılıp aşılmadığı önceki taranan snapshot ile doğrulanır.")
+            BulletItem("Azami Sıkıştırma Oranı (~50 Bayt/Kayıt): Ham HTML veya istek logları yerine yalnızca hafta kodu, binlik görüntülenme ve hesaplanmış L, P, D, M değerleri saklanır.")
+            BulletItem("Hafif Disk Ayak İzi: 1000 kişi için 1 yıllık (52 hafta) tüm geçmiş veri yalnızca ~2.6 MB tutar; cihazı ve belleği yormaz.")
+            BulletItem("Otomatik Ekleme ve 1000 Kişi Tavanı: Katalog azami 1000 kişiyle sınırlıdır. Wikimedia REST API'den canlı eklenen veya taranan profiller bu tavanı aşamaz.")
         }
     }
 }

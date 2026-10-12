@@ -1,15 +1,20 @@
 package com.example.ui
 
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.data.local.entity.CompactScanEntity
 import com.example.data.model.Celebrity
 import com.example.data.model.CelebrityCategory
+import com.example.data.remote.WikipediaSearchResult
 import com.example.data.repository.PulseRepository
+import com.example.data.repository.StorageStats
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 
 enum class AppNavTab(val title: String) {
     FEED("Gündem"),
@@ -46,12 +51,21 @@ data class PulseUiState(
     val compareCelebrity1: Celebrity? = null,
     val compareCelebrity2: Celebrity? = null,
     val selectedRankingTab: RankingTab = RankingTab.TOP_LIKED,
-    val userNotification: String? = null
+    val userNotification: String? = null,
+    val isScanning: Boolean = false,
+    val scanProgress: Pair<Int, Int>? = null,
+    val storageStats: StorageStats = StorageStats(0, 1000, 0, 0L),
+    val showAddCelebrityDialog: Boolean = false,
+    val wikiSearchResults: List<WikipediaSearchResult> = emptyList(),
+    val isSearchingWiki: Boolean = false,
+    val selectedCelebrityScanHistory: List<CompactScanEntity> = emptyList()
 )
 
 class PulseViewModel(
-    private val repository: PulseRepository = PulseRepository()
-) : ViewModel() {
+    application: Application
+) : AndroidViewModel(application) {
+
+    private val repository: PulseRepository = PulseRepository(application.applicationContext)
 
     private val _searchQuery = MutableStateFlow("")
     private val _selectedCategory = MutableStateFlow<CelebrityCategory?>(null)
@@ -66,6 +80,22 @@ class PulseViewModel(
     private val _selectedRankingTab = MutableStateFlow(RankingTab.TOP_LIKED)
     private val _userNotification = MutableStateFlow<String?>(null)
 
+    private val _showAddCelebrityDialog = MutableStateFlow(false)
+    private val _wikiSearchResults = MutableStateFlow<List<WikipediaSearchResult>>(emptyList())
+    private val _isSearchingWiki = MutableStateFlow(false)
+    private val _storageStats = MutableStateFlow(StorageStats(0, 1000, 0, 0L))
+    private val _selectedCelebrityScanHistory = MutableStateFlow<List<CompactScanEntity>>(emptyList())
+    private val _votedCelebrityIds = MutableStateFlow<Set<String>>(emptySet())
+
+    init {
+        viewModelScope.launch {
+            repository.userVotes.collect { votes ->
+                _votedCelebrityIds.value = votes.map { it.celebrityId }.toSet()
+            }
+        }
+        refreshStats()
+    }
+
     val uiState: StateFlow<PulseUiState> = combine(
         repository.celebrities,
         _searchQuery,
@@ -79,7 +109,14 @@ class PulseViewModel(
         _compareCeleb1Id,
         _compareCeleb2Id,
         _selectedRankingTab,
-        _userNotification
+        _userNotification,
+        repository.isScanning,
+        repository.scanProgress,
+        _storageStats,
+        _showAddCelebrityDialog,
+        _wikiSearchResults,
+        _isSearchingWiki,
+        _selectedCelebrityScanHistory
     ) { params ->
         @Suppress("UNCHECKED_CAST")
         val celebs = params[0] as List<Celebrity>
@@ -95,6 +132,13 @@ class PulseViewModel(
         val comp2Id = params[10] as String?
         val rankTab = params[11] as RankingTab
         val notif = params[12] as String?
+        val isScan = params[13] as Boolean
+        val scanProg = params[14] as Pair<Int, Int>?
+        val stats = params[15] as StorageStats
+        val showAdd = params[16] as Boolean
+        val wikiResults = params[17] as List<WikipediaSearchResult>
+        val isSearching = params[18] as Boolean
+        val scanHistory = params[19] as List<CompactScanEntity>
 
         val filtered = celebs.filter { celeb ->
             val matchesCategory = cat == null || celeb.category == cat
@@ -126,7 +170,14 @@ class PulseViewModel(
             compareCelebrity1 = celebs.find { it.id == comp1Id },
             compareCelebrity2 = celebs.find { it.id == comp2Id },
             selectedRankingTab = rankTab,
-            userNotification = notif
+            userNotification = notif,
+            isScanning = isScan,
+            scanProgress = scanProg,
+            storageStats = stats,
+            showAddCelebrityDialog = showAdd,
+            wikiSearchResults = wikiResults,
+            isSearchingWiki = isSearching,
+            selectedCelebrityScanHistory = scanHistory
         )
     }.stateIn(
         scope = viewModelScope,
@@ -148,7 +199,6 @@ class PulseViewModel(
 
     fun onTabSelected(tab: AppNavTab) {
         _currentTab.value = tab
-        // If navigating to main tab, clear detail view
         if (_selectedDetailId.value != null && tab != AppNavTab.FEED) {
             _selectedDetailId.value = null
         }
@@ -156,6 +206,19 @@ class PulseViewModel(
 
     fun selectCelebrityDetail(celebrity: Celebrity?) {
         _selectedDetailId.value = celebrity?.id
+        if (celebrity != null) {
+            loadScanHistory(celebrity.id)
+        } else {
+            _selectedCelebrityScanHistory.value = emptyList()
+        }
+    }
+
+    private fun loadScanHistory(celebrityId: String) {
+        viewModelScope.launch {
+            repository.getScanHistory(celebrityId).collect { history ->
+                _selectedCelebrityScanHistory.value = history
+            }
+        }
     }
 
     fun showTransparencyDialog(celebrity: Celebrity?) {
@@ -168,6 +231,13 @@ class PulseViewModel(
 
     fun showObjectionDialog(celebrity: Celebrity?) {
         _objectionCelebrityId.value = celebrity?.id
+    }
+
+    fun setShowAddCelebrityDialog(show: Boolean) {
+        _showAddCelebrityDialog.value = show
+        if (!show) {
+            _wikiSearchResults.value = emptyList()
+        }
     }
 
     fun selectCompareCelebrities(celeb1: Celebrity?, celeb2: Celebrity?) {
@@ -185,10 +255,13 @@ class PulseViewModel(
         rating: Int,
         tags: List<String>
     ) {
-        val success = repository.submitVote(celebrityId, knows, rating, tags)
-        if (success) {
-            _votingCelebrityId.value = null
-            _userNotification.value = "Oyunuz Bayesçi formüle dahil edildi (1 oy / 90 gün koruması aktif)."
+        viewModelScope.launch {
+            val success = repository.submitVote(celebrityId, knows, rating, tags)
+            if (success) {
+                _votingCelebrityId.value = null
+                _userNotification.value = "Oyunuz Bayesçi formüle dahil edildi ve sıkıştırılmış kütüğe işlendi."
+                refreshStats()
+            }
         }
     }
 
@@ -198,10 +271,78 @@ class PulseViewModel(
         subject: String,
         statement: String
     ) {
-        val success = repository.submitObjection(celebrityId, representative, subject, statement)
-        if (success) {
-            _objectionCelebrityId.value = null
-            _userNotification.value = "İtiraz ve düzeltme açıklaması şeffaflık kütüğüne işlendi."
+        viewModelScope.launch {
+            val success = repository.submitObjection(celebrityId, representative, subject, statement)
+            if (success) {
+                _objectionCelebrityId.value = null
+                _userNotification.value = "İtiraz ve düzeltme açıklaması şeffaflık kütüğüne işlendi."
+            }
+        }
+    }
+
+    fun triggerWikipediaScanAll() {
+        viewModelScope.launch {
+            _userNotification.value = "Wikimedia REST API'sinden gerçek sayfa görüntülenme taraması başlatıldı..."
+            repository.scanAllFromWikipedia()
+            _userNotification.value = "Tarama tamamlandı: Tüm popülerlik ve kutuplaşma göstergeleri gerçek verilerle güncellendi."
+            refreshStats()
+        }
+    }
+
+    fun expandCatalogToTarget(targetCount: Int = 1000) {
+        viewModelScope.launch {
+            _userNotification.value = "Katalog $targetCount kişiye genişletiliyor ve taranıyor..."
+            val newTotal = repository.expandCatalogToTarget(targetCount)
+            _userNotification.value = "Katalog başarıyla $newTotal kişiye genişletildi! (Sıkıştırılmış denetim izi hazır)."
+            refreshStats()
+        }
+    }
+
+    fun triggerSingleCelebrityScan(celebrityId: String) {
+        viewModelScope.launch {
+            val success = repository.scanAndSyncRealDataForCelebrity(celebrityId)
+            if (success) {
+                _userNotification.value = "Gerçek Wikimedia verisi çekildi ve sıkıştırılmış denetim izine kaydedildi."
+                loadScanHistory(celebrityId)
+                refreshStats()
+            }
+        }
+    }
+
+    fun searchWikipedia(query: String) {
+        if (query.isBlank()) {
+            _wikiSearchResults.value = emptyList()
+            return
+        }
+        viewModelScope.launch {
+            _isSearchingWiki.value = true
+            try {
+                val results = repository.searchWikipedia(query)
+                _wikiSearchResults.value = results
+            } finally {
+                _isSearchingWiki.value = false
+            }
+        }
+    }
+
+    fun addCelebrityFromWikipedia(wikiTitle: String, category: CelebrityCategory) {
+        viewModelScope.launch {
+            _userNotification.value = "'$wikiTitle' için Wikipedia verileri çekiliyor..."
+            val result = repository.addCelebrityFromWikipedia(wikiTitle, category)
+            result.onSuccess { celeb ->
+                _showAddCelebrityDialog.value = false
+                _userNotification.value = "'${celeb.name}' başarıyla eklendi! (Kapasite: ${_storageStats.value.celebrityCount + 1}/1000)"
+                refreshStats()
+            }.onFailure {
+                _userNotification.value = "Hata: Kişi eklenemedi (${it.localizedMessage})."
+            }
+        }
+    }
+
+    private fun refreshStats() {
+        viewModelScope.launch {
+            val stats = repository.getStorageStats()
+            _storageStats.value = stats
         }
     }
 
@@ -210,6 +351,6 @@ class PulseViewModel(
     }
 
     fun hasUserVoted(celebrityId: String): Boolean {
-        return repository.hasUserVoted(celebrityId)
+        return _votedCelebrityIds.value.contains(celebrityId)
     }
 }

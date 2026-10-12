@@ -407,6 +407,15 @@ fun DetailScreen(
 
             Spacer(modifier = Modifier.height(14.dp))
 
+            // COMPACT AUDIT TRAIL / SCAN HISTORY
+            val uiState = viewModel.uiState.value
+            com.example.ui.components.CompactScanHistoryCard(
+                scanHistory = uiState.selectedCelebrityScanHistory,
+                onRescanClick = { viewModel.triggerSingleCelebrityScan(celebrity.id) }
+            )
+
+            Spacer(modifier = Modifier.height(14.dp))
+
             // TRANSPARENCY CTA
             Button(
                 onClick = { viewModel.showTransparencyDialog(celebrity) },

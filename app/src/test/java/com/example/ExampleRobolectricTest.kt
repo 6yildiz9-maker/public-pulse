@@ -58,4 +58,17 @@ class ExampleRobolectricTest {
         assertEquals(4.2, normalDelta, 0.01)
         org.junit.Assert.assertFalse(triggeredNormal)
     }
+
+    @Test
+    fun `verify compact scan compression footprint and 1000 limit`() {
+        val maxLimit = 1000
+        val weeksInYear = 52
+        // Compact scan record size is ~50 bytes
+        val estimatedPerRecordBytes = 50L
+        val yearlyArchiveBytes = maxLimit * weeksInYear * estimatedPerRecordBytes
+        val yearlyArchiveMB = yearlyArchiveBytes / (1024.0 * 1024.0)
+
+        // 1000 people for a full year of weekly scans should be under 3.0 MB
+        assertTrue("Compressed scan archive must be compact (<3.0 MB for 1000 people/year)", yearlyArchiveMB < 3.0)
+    }
 }

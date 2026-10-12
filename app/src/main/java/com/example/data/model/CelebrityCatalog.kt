@@ -583,4 +583,710 @@ object CelebrityCatalog {
             primaryColorHex = 0xFF84CC16
         )
     )
+
+    /**
+     * Genişletilmiş gerçek kamuoyu figürleri havuzu (Katalog ve tarama ölçeklemesi).
+     */
+    val discoveryRoster: List<Celebrity> = listOf(
+        // OYUNCULAR
+        Celebrity(
+            id = "cem-yilmaz",
+            name = "Cem Yılmaz",
+            category = CelebrityCategory.OYUNCU,
+            profession = "Komedyen, Yönetmen & Senarist",
+            bio = "G.O.R.A., A.R.O.G., Yahşi Batı ve stand-up gösterileriyle Türk mizahının son 30 yılına damga vuran usta komedyen.",
+            wikiTitle = "Cem Yılmaz",
+            wikiMonthlyViews = 185000L,
+            ratings = mapOf(1 to 14, 2 to 20, 3 to 40, 4 to 110, 5 to 580),
+            tags = listOf("Mizah Ustası", "Yaratıcı", "Sinemacı", "Kült İsim"),
+            previousPeriodLikeability = 88.0,
+            recentActivity = "Yeni stand-up turnesi ve dijital dizi projeleri",
+            avatarEmojiOrSymbol = "🎙️",
+            primaryColorHex = 0xFFF59E0B
+        ),
+        Celebrity(
+            id = "sener-sen",
+            name = "Şener Şen",
+            category = CelebrityCategory.OYUNCU,
+            profession = "Usta Tiyatro ve Sinema Sanatçısı",
+            bio = "Eşkıya, Muhsin Bey, Çiçek Abbas ve Züğürt Ağa ile Türk sinema tarihinin en saygın yaşayan efsanelerinden biri.",
+            wikiTitle = "Şener Şen",
+            wikiMonthlyViews = 120000L,
+            ratings = mapOf(1 to 1, 2 to 3, 3 to 8, 4 to 45, 5 to 650),
+            tags = listOf("Sinema Efsanesi", "Halkın Sevgilisi", "Usta Oyuncu"),
+            previousPeriodLikeability = 96.0,
+            recentActivity = "Zengin Mutfağı tiyatro oyunu temsilleri",
+            avatarEmojiOrSymbol = "🎬",
+            primaryColorHex = 0xFFD97706
+        ),
+        Celebrity(
+            id = "nuri-bilge-ceylan",
+            name = "Nuri Bilge Ceylan",
+            category = CelebrityCategory.OYUNCU,
+            profession = "Altın Palmiye Ödüllü Yönetmen & Senarist",
+            bio = "Kış Uykusu ile Cannes Film Festivali Altın Palmiye ödülü sahibi, Türk auteur sinemasının dünyadaki en büyük temsilcisi.",
+            wikiTitle = "Nuri Bilge Ceylan",
+            wikiMonthlyViews = 95000L,
+            ratings = mapOf(1 to 4, 2 to 8, 3 to 22, 4 to 80, 5 to 480),
+            tags = listOf("Auteur Yönetmen", "Altın Palmiye", "Derinlikli Sanat"),
+            previousPeriodLikeability = 89.5,
+            recentActivity = "Kuru Otlar Üstüne festival gösterimleri ve retrospektif sergiler",
+            avatarEmojiOrSymbol = "🎥",
+            primaryColorHex = 0xFF475569
+        ),
+        Celebrity(
+            id = "cagatay-ulusoy",
+            name = "Çağatay Ulusoy",
+            category = CelebrityCategory.OYUNCU,
+            profession = "Dizi ve Sinema Oyuncusu",
+            bio = "İçerde, Hakan: Muhafız, Terzi ve Kübra projeleriyle hem ulusal hem global platformlarda başrol üstlenen popüler aktör.",
+            wikiTitle = "Çağatay Ulusoy",
+            wikiMonthlyViews = 148000L,
+            ratings = mapOf(1 to 18, 2 to 25, 3 to 50, 4 to 110, 5 to 330),
+            tags = listOf("Başrol Aktörü", "Global Dizi", "Karizmatik"),
+            previousPeriodLikeability = 78.4,
+            recentActivity = "Gaddar dizisi ve yeni sinema filmi hazırlıkları",
+            avatarEmojiOrSymbol = "🕶️",
+            primaryColorHex = 0xFF0284C7
+        ),
+        Celebrity(
+            id = "beren-saat",
+            name = "Beren Saat",
+            category = CelebrityCategory.OYUNCU,
+            profession = "Dizi ve Sinema Oyuncusu",
+            bio = "Hatırla Sevgili, Aşk-ı Memnu, Fatmagül'ün Suçu Ne? ve Atiye dizileriyle kültleşen performanslara imza atan oyuncu.",
+            wikiTitle = "Beren Saat",
+            wikiMonthlyViews = 160000L,
+            ratings = mapOf(1 to 16, 2 to 24, 3 to 48, 4 to 125, 5 to 410),
+            tags = listOf("Kült Karakterler", "Toplumsal Duyarlılık", "Uluslararası Tanınırlık"),
+            previousPeriodLikeability = 83.2,
+            recentActivity = "Yeni müzikal albüm ve bağımsız film projeleri",
+            avatarEmojiOrSymbol = "🌹",
+            primaryColorHex = 0xFFBE185D
+        ),
+        Celebrity(
+            id = "engin-akyurek",
+            name = "Engin Akyürek",
+            category = CelebrityCategory.OYUNCU,
+            profession = "Dizi & Sinema Oyuncusu, Yazar",
+            bio = "Fatmagül'ün Suçu Ne?, Kara Para Aşk ve Adım Farah ile özellikle Güney Amerika ve Ortadoğu'da geniş hayran kitlesi olan aktör.",
+            wikiTitle = "Engin Akyürek",
+            wikiMonthlyViews = 130000L,
+            ratings = mapOf(1 to 10, 2 to 18, 3 to 40, 4 to 110, 5 to 460),
+            tags = listOf("Global Fan Kitlesi", "Yetenekli", "Edebi Yön"),
+            previousPeriodLikeability = 85.0,
+            avatarEmojiOrSymbol = "🎭",
+            primaryColorHex = 0xFF4338CA
+        ),
+        Celebrity(
+            id = "kenan-imirzalioglu",
+            name = "Kenan İmirzalıoğlu",
+            category = CelebrityCategory.OYUNCU,
+            profession = "Oyuncu & Kim Milyoner Olmak İster Sunucusu",
+            bio = "Deli Yürek, Ezel ve Karadayı dizileriyle Türk televizyon tarihinin en ikonik başrollerinden birine hayat veren sanatçı.",
+            wikiTitle = "Kenan İmirzalıoğlu",
+            wikiMonthlyViews = 175000L,
+            ratings = mapOf(1 to 8, 2 to 14, 3 to 35, 4 to 115, 5 to 510),
+            tags = listOf("Ezel", "Kült Aktör", "Halkın Sevgilisi", "Karizmatik"),
+            previousPeriodLikeability = 89.0,
+            avatarEmojiOrSymbol = "🎬",
+            primaryColorHex = 0xFF1E3A8A
+        ),
+        Celebrity(
+            id = "cansu-dere",
+            name = "Cansu Dere",
+            category = CelebrityCategory.OYUNCU,
+            profession = "Dizi & Sinema Oyuncusu",
+            bio = "Sıla, Ezel, Anne ve Sadakatsiz dizilerindeki çarpıcı performanslarıyla uluslararası Emmy jürisi tarafından da övülen başrol.",
+            wikiTitle = "Cansu Dere",
+            wikiMonthlyViews = 165000L,
+            ratings = mapOf(1 to 12, 2 to 20, 3 to 42, 4 to 120, 5 to 480),
+            tags = listOf("Zarif", "Güçlü Başrol", "Uluslararası Başarı"),
+            previousPeriodLikeability = 86.4,
+            avatarEmojiOrSymbol = "✨",
+            primaryColorHex = 0xFF701A75
+        ),
+        Celebrity(
+            id = "pinar-deniz",
+            name = "Pınar Deniz",
+            category = CelebrityCategory.OYUNCU,
+            profession = "Dizi & Sinema Oyuncusu",
+            bio = "Yargı dizisindeki Avukat Ceylin karakteriyle Uluslararası Emmy ödülü kazanan ekibin başrol oyuncusu.",
+            wikiTitle = "Pınar Deniz",
+            wikiMonthlyViews = 140000L,
+            ratings = mapOf(1 to 9, 2 to 16, 3 to 38, 4 to 105, 5 to 420),
+            tags = listOf("Emmy Ödüllü Dizi", "Yükselen Yıldız", "Doğal"),
+            previousPeriodLikeability = 84.5,
+            avatarEmojiOrSymbol = "⚖️",
+            primaryColorHex = 0xFF9333EA
+        ),
+        Celebrity(
+            id = "kaan-urgancioglu",
+            name = "Kaan Urgancıoğlu",
+            category = CelebrityCategory.OYUNCU,
+            profession = "Dizi & Sinema Oyuncusu",
+            bio = "Kara Sevda ve Yargı dizilerindeki unutulmaz performansları ve uluslararası sinema rolleriyle tanınan aktör.",
+            wikiTitle = "Kaan Urgancıoğlu",
+            wikiMonthlyViews = 125000L,
+            ratings = mapOf(1 to 8, 2 to 14, 3 to 32, 4 to 98, 5 to 410),
+            tags = listOf("Karakter Oyuncusu", "Karizmatik", "Uluslararası"),
+            previousPeriodLikeability = 85.2,
+            avatarEmojiOrSymbol = "🎬",
+            primaryColorHex = 0xFF2563EB
+        ),
+        Celebrity(
+            id = "burak-ozcivit",
+            name = "Burak Özçivit",
+            category = CelebrityCategory.OYUNCU,
+            profession = "Dizi Oyuncusu & Yapımcı",
+            bio = "Kuruluş Osman ve Kara Sevda dizileriyle dünyanın dört bir yanında milyonlarca izleyiciye ulaşan tarihi dizi başrolü.",
+            wikiTitle = "Burak Özçivit",
+            wikiMonthlyViews = 190000L,
+            ratings = mapOf(1 to 25, 2 to 32, 3 to 60, 4 to 125, 5 to 460),
+            tags = listOf("Tarihi Dizi Başrolü", "Global Şöhret", "Popüler"),
+            previousPeriodLikeability = 79.5,
+            avatarEmojiOrSymbol = "🗡️",
+            primaryColorHex = 0xFFB45309
+        ),
+        Celebrity(
+            id = "farah-zeynep-abdullah",
+            name = "Farah Zeynep Abdullah",
+            category = CelebrityCategory.OYUNCU,
+            profession = "Sinema & Dizi Oyuncusu",
+            bio = "Kelebeğin Rüyası, Bergen, Masumlar Apartmanı ve Bi Küçük Eylül Meselesi filmlerindeki güçlü biyografik rolleriyle tanınır.",
+            wikiTitle = "Farah Zeynep Abdullah",
+            wikiMonthlyViews = 155000L,
+            ratings = mapOf(1 to 20, 2 to 25, 3 to 45, 4 to 110, 5 to 440),
+            tags = listOf("Biyografi Ustası", "Cesur Oyuncu", "Güçlü Duruş"),
+            previousPeriodLikeability = 82.0,
+            avatarEmojiOrSymbol = "🎭",
+            primaryColorHex = 0xFFE11D48
+        ),
+
+        // MÜZİSYENLER
+        Celebrity(
+            id = "fazil-say",
+            name = "Fazıl Say",
+            category = CelebrityCategory.MUZISYEN,
+            profession = "Piyanist & Besteci",
+            bio = "Dünya çapında konserler veren, Türk klasik ve çağdaş müziğinin en üretken ve virtuöz bestecilerinden biri.",
+            wikiTitle = "Fazıl Say",
+            wikiMonthlyViews = 110000L,
+            ratings = mapOf(1 to 20, 2 to 28, 3 to 40, 4 to 95, 5 to 490),
+            tags = listOf("Dünya Çapında Virtüöz", "Üretken Besteci", "Tutkulu"),
+            previousPeriodLikeability = 84.8,
+            avatarEmojiOrSymbol = "🎹",
+            primaryColorHex = 0xFF7C3AED
+        ),
+        Celebrity(
+            id = "harun-tekin",
+            name = "Harun Tekin (Mor ve Ötesi)",
+            category = CelebrityCategory.MUZISYEN,
+            profession = "Rock Müzisyeni, Besteci & Yazar",
+            bio = "Mor ve Ötesi grubunun solisti ve söz yazarı; İnönü Stadyumu konseriyle Türk rock müziğinde tarihi bir rekora imza attı.",
+            wikiTitle = "Harun Tekin",
+            wikiMonthlyViews = 98000L,
+            ratings = mapOf(1 to 5, 2 to 10, 3 to 25, 4 to 90, 5 to 440),
+            tags = listOf("Türk Rock Lideri", "Entelektüel", "Birleştirici"),
+            previousPeriodLikeability = 88.4,
+            avatarEmojiOrSymbol = "🎸",
+            primaryColorHex = 0xFF2563EB
+        ),
+        Celebrity(
+            id = "hadise",
+            name = "Hadise",
+            category = CelebrityCategory.MUZISYEN,
+            profession = "Pop Şarkıcısı & TV Jüri Üyesi",
+            bio = "Eurovision temsilcisi, sahne şovları ve hit pop parçalarıyla televizyon ve müzik sektörünün en dinamik figürlerinden.",
+            wikiTitle = "Hadise (şarkıcı)",
+            wikiMonthlyViews = 170000L,
+            ratings = mapOf(1 to 55, 2 to 60, 3 to 75, 4 to 130, 5 to 310),
+            tags = listOf("Sahne Işığı", "Dans & Şov", "Medyatik Güç"),
+            previousPeriodLikeability = 66.5,
+            avatarEmojiOrSymbol = "💫",
+            primaryColorHex = 0xFFDB2777
+        ),
+        Celebrity(
+            id = "hayko-cepkin",
+            name = "Hayko Cepkin",
+            category = CelebrityCategory.MUZISYEN,
+            profession = "Metal / Rock Müzisyeni & Paraşütçü",
+            bio = "Özgün vokal tarzı, devasa sahne prodüksiyonları ve samimi kişiliğiyle Türk alternatif rock sahnesinin en sevilen ismi.",
+            wikiTitle = "Hayko Cepkin",
+            wikiMonthlyViews = 125000L,
+            ratings = mapOf(1 to 8, 2 to 14, 3 to 30, 4 to 85, 5 to 510),
+            tags = listOf("Özgün Rock", "Sahne Devi", "Samimi & Doğal"),
+            previousPeriodLikeability = 89.0,
+            avatarEmojiOrSymbol = "🤘",
+            primaryColorHex = 0xFF4B5563
+        ),
+        Celebrity(
+            id = "kenan-dogulu",
+            name = "Kenan Doğulu",
+            category = CelebrityCategory.MUZISYEN,
+            profession = "Pop Müzisyeni & Besteci",
+            bio = "30 yılı aşan hit şarkılar kataloğu, enerjik festival performansları ve Eurovision 4.lüğü ile pop müziğin lokomotifi.",
+            wikiTitle = "Kenan Doğulu",
+            wikiMonthlyViews = 135000L,
+            ratings = mapOf(1 to 12, 2 to 18, 3 to 45, 4 to 110, 5 to 450),
+            tags = listOf("Hit Fabrikası", "Yüksek Enerji", "Pozitif"),
+            previousPeriodLikeability = 85.0,
+            avatarEmojiOrSymbol = "🎷",
+            primaryColorHex = 0xFF0284C7
+        ),
+        Celebrity(
+            id = "sila-gencoglu",
+            name = "Sıla Gençoğlu",
+            category = CelebrityCategory.MUZISYEN,
+            profession = "Şarkıcı & Şarkı Yazarı",
+            bio = "Derinlikli söz yazarlığı, güçlü sesi ve onlarca liste başı şarkısıyla Türk popunun en saygın kadın söz yazarlarından.",
+            wikiTitle = "Sıla (şarkıcı)",
+            wikiMonthlyViews = 145000L,
+            ratings = mapOf(1 to 14, 2 to 20, 3 to 40, 4 to 115, 5 to 470),
+            tags = listOf("Söz Yazarı", "Kuvvetli Ses", "Duygusal"),
+            previousPeriodLikeability = 85.8,
+            avatarEmojiOrSymbol = "🎙️",
+            primaryColorHex = 0xFF9D174D
+        ),
+        Celebrity(
+            id = "sebnem-ferah",
+            name = "Şebnem Ferah",
+            category = CelebrityCategory.MUZISYEN,
+            profession = "Türk Rock Müziği Sanatçısı",
+            bio = "Kadın, Artık Kısa Cümleler Kuruyorum ve Perdeler albümleriyle Türk rock tarihinin en büyük kadın vokalisti ve bestecisi.",
+            wikiTitle = "Şebnem Ferah",
+            wikiMonthlyViews = 150000L,
+            ratings = mapOf(1 to 4, 2 to 8, 3 to 18, 4 to 65, 5 to 620),
+            tags = listOf("Rock Efsanesi", "Kült İsim", "Vokal Gücü"),
+            previousPeriodLikeability = 94.0,
+            avatarEmojiOrSymbol = "⚡",
+            primaryColorHex = 0xFF1F2937
+        ),
+        Celebrity(
+            id = "teoman",
+            name = "Teoman",
+            category = CelebrityCategory.MUZISYEN,
+            profession = "Rock Sanatçısı & Yazar",
+            bio = "O, 17, Gönülçelen ve Kupa Kızı ile bir neslin şehir melankolisini ve rock ruhunu şarkılarına nakşeden ikonik müzisyen.",
+            wikiTitle = "Teoman (şarkıcı)",
+            wikiMonthlyViews = 160000L,
+            ratings = mapOf(1 to 18, 2 to 26, 3 to 48, 4 to 120, 5 to 490),
+            tags = listOf("Şehir Ozanı", "Kült Şarkılar", "Melankoli"),
+            previousPeriodLikeability = 84.0,
+            avatarEmojiOrSymbol = "🚬",
+            primaryColorHex = 0xFF6B7280
+        ),
+
+        // SPORCULAR
+        Celebrity(
+            id = "melissa-vargas",
+            name = "Melissa Vargas",
+            category = CelebrityCategory.SPORCU,
+            profession = "Voleybolcu (A Milli Takım & Fenerbahçe)",
+            bio = "Filenin Sultanları'nın hücum gücü, MVP ödüllü rekor servisleri ve sempatik kişiliğiyle halkın gözbebeği milli sporcu.",
+            wikiTitle = "Melissa Vargas",
+            wikiMonthlyViews = 210000L,
+            ratings = mapOf(1 to 4, 2 to 8, 3 to 18, 4 to 70, 5 to 620),
+            tags = listOf("MVP", "Sultanların Gücü", "Sempatik İkon", "Milli Gurur"),
+            previousPeriodLikeability = 94.2,
+            avatarEmojiOrSymbol = "⚡",
+            primaryColorHex = 0xFFF59E0B
+        ),
+        Celebrity(
+            id = "ferdi-kadioglu",
+            name = "Ferdi Kadıoğlu",
+            category = CelebrityCategory.SPORCU,
+            profession = "Milli Futbolcu (Brighton & A Milli Takım)",
+            bio = "EURO 2024'te turnuvanın en iyi bekleri arasında gösterilen, Premier Lig'e transfer olan yüksek enerjili milli futbolcu.",
+            wikiTitle = "Ferdi Kadıoğlu",
+            wikiMonthlyViews = 165000L,
+            ratings = mapOf(1 to 6, 2 to 12, 3 to 28, 4 to 95, 5 to 540),
+            tags = listOf("Premier Lig Yıldızı", "Mücadeleci", "Alçakgönüllü"),
+            previousPeriodLikeability = 90.8,
+            avatarEmojiOrSymbol = "🏃",
+            primaryColorHex = 0xFF0284C7
+        ),
+        Celebrity(
+            id = "hakan-calhanoglu",
+            name = "Hakan Çalhanoğlu",
+            category = CelebrityCategory.SPORCU,
+            profession = "Futbolcu (Inter Milan & Milli Takım Kaptanı)",
+            bio = "Inter Milan'ın orta saha beyni ve Serie A şampiyonu, frikik ustası milli futbolcu.",
+            wikiTitle = "Hakan Çalhanoğlu",
+            wikiMonthlyViews = 175000L,
+            ratings = mapOf(1 to 15, 2 to 24, 3 to 45, 4 to 110, 5 to 480),
+            tags = listOf("Milli Takım Kaptanı", "Serie A Şampiyonu", "Frikik Ustası"),
+            previousPeriodLikeability = 85.0,
+            avatarEmojiOrSymbol = "⚽",
+            primaryColorHex = 0xFF1D4ED8
+        ),
+        Celebrity(
+            id = "kenan-yildiz",
+            name = "Kenan Yıldız",
+            category = CelebrityCategory.SPORCU,
+            profession = "Futbolcu (Juventus & A Milli Takım)",
+            bio = "Juventus'ta efsane 10 numarayı giyen, Del Piero veliahdı olarak gösterilen süper yetenekli milli forvet.",
+            wikiTitle = "Kenan Yıldız",
+            wikiMonthlyViews = 180000L,
+            ratings = mapOf(1 to 5, 2 to 10, 3 to 25, 4 to 90, 5 to 550),
+            tags = listOf("Juventus 10 Numara", "Milli Yetenek", "Geleceğin Yıldızı"),
+            previousPeriodLikeability = 91.5,
+            avatarEmojiOrSymbol = "⚽",
+            primaryColorHex = 0xFF111827
+        ),
+        Celebrity(
+            id = "baris-alper-yilmaz",
+            name = "Barış Alper Yılmaz",
+            category = CelebrityCategory.SPORCU,
+            profession = "Futbolcu (Galatasaray & A Milli Takım)",
+            bio = "Fiziksel gücü, çok yönlülüğü ve EURO 2024'teki patlayıcı koşularıyla Avrupa devlerinin dikkatini çeken kanat oyuncusu.",
+            wikiTitle = "Barış Alper Yılmaz",
+            wikiMonthlyViews = 170000L,
+            ratings = mapOf(1 to 14, 2 to 20, 3 to 40, 4 to 115, 5 to 510),
+            tags = listOf("Fiziksel Güç", "Mücadeleci", "Çok Yönlü"),
+            previousPeriodLikeability = 87.0,
+            avatarEmojiOrSymbol = "⚡",
+            primaryColorHex = 0xFFDC2626
+        ),
+        Celebrity(
+            id = "kerem-akturkoglu",
+            name = "Kerem Aktürkoğlu",
+            category = CelebrityCategory.SPORCU,
+            profession = "Futbolcu (Benfica & A Milli Takım)",
+            bio = "Alt liglerden Benfica'ya ve Şampiyonlar Ligi yıldızlığına uzanan ilham verici 'Harry Potter' hikayesi.",
+            wikiTitle = "Kerem Aktürkoğlu",
+            wikiMonthlyViews = 195000L,
+            ratings = mapOf(1 to 18, 2 to 24, 3 to 45, 4 to 120, 5 to 530),
+            tags = listOf("Benfica Yıldızı", "İlham Verici", "Hızlı Forvet"),
+            previousPeriodLikeability = 86.8,
+            avatarEmojiOrSymbol = "🪄",
+            primaryColorHex = 0xFFB91C1C
+        ),
+        Celebrity(
+            id = "ilkin-aydin",
+            name = "İlkin Aydın",
+            category = CelebrityCategory.SPORCU,
+            profession = "Voleybolcu (Galatasaray & A Milli Takım)",
+            bio = "Filenin Sultanları'nın enerjik smaçörü; kritik anlardaki savunma ve hücum katkısıyla taraftarların sevgilisi.",
+            wikiTitle = "İlkin Aydın",
+            wikiMonthlyViews = 120000L,
+            ratings = mapOf(1 to 6, 2 to 10, 3 to 24, 4 to 85, 5 to 490),
+            tags = listOf("Filenin Sultanı", "Sempatik", "Hırslı"),
+            previousPeriodLikeability = 90.0,
+            avatarEmojiOrSymbol = "🏐",
+            primaryColorHex = 0xFFE11D48
+        ),
+        Celebrity(
+            id = "toprak-razgatlioglu",
+            name = "Toprak Razgatlıoğlu",
+            category = CelebrityCategory.SPORCU,
+            profession = "Motosiklet Yarışçısı (WorldSBK Dünya Şampiyonu)",
+            bio = "WorldSBK Dünya Şampiyonu; inanılmaz 'stoppie' frenleri ve BMW fabrika takımıyla kırdığı galibiyet rekorlarıyla efsaneleşti.",
+            wikiTitle = "Toprak Razgatlıoğlu",
+            wikiMonthlyViews = 150000L,
+            ratings = mapOf(1 to 3, 2 to 6, 3 to 15, 4 to 60, 5 to 610),
+            tags = listOf("Dünya Şampiyonu", "Rekortmen", "Korkusuz Pilot"),
+            previousPeriodLikeability = 94.5,
+            avatarEmojiOrSymbol = "🏍️",
+            primaryColorHex = 0xFF2563EB
+        ),
+
+        // FENOMENLER
+        Celebrity(
+            id = "cagri-mert-bakirci",
+            name = "Çağrı Mert Bakırcı (Evrim Ağacı)",
+            category = CelebrityCategory.FENOMEN,
+            profession = "Evrimsel Biyolog, Yazar & Evrim Ağacı Kurucusu",
+            bio = "Türkiye'nin en büyük popüler bilim platformu Evrim Ağacı'nın kurucusu; bilimsel rasyonelliği yaygınlaştıran araştırmacı.",
+            wikiTitle = "Evrim Ağacı",
+            wikiMonthlyViews = 120000L,
+            ratings = mapOf(1 to 18, 2 to 22, 3 to 35, 4 to 90, 5 to 510),
+            tags = listOf("Popüler Bilim", "Akademik Çaba", "Rasyonel Düşünce"),
+            previousPeriodLikeability = 88.0,
+            avatarEmojiOrSymbol = "🧬",
+            primaryColorHex = 0xFF059669
+        ),
+        Celebrity(
+            id = "oguzhan-ugur",
+            name = "Oğuzhan Uğur (BaBaLa TV)",
+            category = CelebrityCategory.FENOMEN,
+            profession = "İçerik Üreticisi, Sunucu & Yönetmen",
+            bio = "BaBaLa TV kurucusu; Mevzular Açık Mikrofon formatıyla milyonlarca izlenmeye ulaşan kamuoyu tartışma platformu mimarı.",
+            wikiTitle = "Oğuzhan Uğur",
+            wikiMonthlyViews = 160000L,
+            ratings = mapOf(1 to 85, 2 to 50, 3 to 55, 4 to 120, 5 to 350),
+            tags = listOf("Açık Mikrofon", "Yüksek Kutuplaşma", "Etkili Medya"),
+            previousPeriodLikeability = 69.2,
+            avatarEmojiOrSymbol = "🎙️",
+            primaryColorHex = 0xFFEA580C
+        ),
+        Celebrity(
+            id = "elraenn",
+            name = "Elraenn (Tuğkan Gönültaş)",
+            category = CelebrityCategory.FENOMEN,
+            profession = "Yayıncı, İçerik Üreticisi & Doğa Tutkunu",
+            bio = "Samimi sohbet yayınları, vahşi doğa/sürüngen sevgisi ve topluluk projeleriyle Türkiye'nin en sevilen canlı yayıncısı.",
+            wikiTitle = "Tuğkan Gönültaş",
+            wikiMonthlyViews = 135000L,
+            ratings = mapOf(1 to 9, 2 to 14, 3 to 30, 4 to 95, 5 to 520),
+            tags = listOf("Samimi Sohbet", "Topluluk Bağı", "Doğa Sever"),
+            previousPeriodLikeability = 89.8,
+            avatarEmojiOrSymbol = "🦎",
+            primaryColorHex = 0xFF16A34A
+        ),
+        Celebrity(
+            id = "orkun-isitmak",
+            name = "Orkun Işıtmak",
+            category = CelebrityCategory.FENOMEN,
+            profession = "YouTube İçerik Üreticisi & Gezgin",
+            bio = "Türkiye'nin ilk ve en istikrarlı büyük YouTuber'larından biri; macera, meydan okuma ve eğlence videolarıyla milyonlara hitap ediyor.",
+            wikiTitle = "Orkun Işıtmak",
+            wikiMonthlyViews = 110000L,
+            ratings = mapOf(1 to 20, 2 to 28, 3 to 50, 4 to 110, 5 to 420),
+            tags = listOf("Öncü YouTuber", "Macera & Eğlence", "Yüksek Prodüksiyon"),
+            previousPeriodLikeability = 81.5,
+            avatarEmojiOrSymbol = "🎬",
+            primaryColorHex = 0xFFD97706
+        ),
+        Celebrity(
+            id = "jahrein",
+            name = "Jahrein (Ahmet Sonuç)",
+            category = CelebrityCategory.FENOMEN,
+            profession = "Yayıncı & Sosyal Medya Yorumcusu",
+            bio = "Sert eleştirileri, internet kültürü ve gündem tartışmalarıyla Türkiye'nin en çok kutuplaşan ve tartışılan figürlerinden.",
+            wikiTitle = "Ahmet Sonuç",
+            wikiMonthlyViews = 155000L,
+            ratings = mapOf(1 to 195, 2 to 75, 3 to 45, 4 to 80, 5 to 260),
+            tags = listOf("Aşırı Kutuplaşma", "Sivri Eleştiri", "Gündem Tartışmaları"),
+            previousPeriodLikeability = 51.0,
+            avatarEmojiOrSymbol = "💣",
+            primaryColorHex = 0xFFEF4444
+        ),
+        Celebrity(
+            id = "berkcan-guven",
+            name = "Berkcan Güven (BEGE)",
+            category = CelebrityCategory.FENOMEN,
+            profession = "İçerik Üreticisi, Müzisyen & DJ",
+            bio = "Vine günlerinden müzik listelerinin zirvesine çıkan, yaratıcı video kurgusu ve müzikal projeleriyle öne çıkan içerik üreticisi.",
+            wikiTitle = "Berkcan Güven",
+            wikiMonthlyViews = 120000L,
+            ratings = mapOf(1 to 18, 2 to 26, 3 to 45, 4 to 115, 5 to 410),
+            tags = listOf("Mizah & Müzik", "Gençlik Kültürü", "Kurgu Yeteneği"),
+            previousPeriodLikeability = 81.0,
+            avatarEmojiOrSymbol = "🎧",
+            primaryColorHex = 0xFF8B5CF6
+        )
+    )
+
+    /**
+     * Genişletilmiş gerçek kamuoyu kataloğu oluşturur.
+     * İstenirse tam 1000 kişiye kadar ölçeklenebilen zengin kamuoyu havuzu üretir.
+     */
+    fun generateFullCatalog(targetCount: Int = 1000): List<Celebrity> {
+        val baseList = (sampleCelebrities + discoveryRoster).distinctBy { it.id }.toMutableList()
+        val limit = targetCount.coerceIn(50, 1000)
+
+        if (baseList.size >= limit) {
+            return baseList.take(limit)
+        }
+
+        // 1000 kişiye tamamlayacak ek gerçek kültürel profil tohumları
+        val additionalProfiles = listOf(
+            Triple("Cem Korkmaz", CelebrityCategory.FENOMEN, "Oha Diyorum ve internet skeçleriyle anılan erken dönem dijital içerik öncüsü"),
+            Triple("Melih Abuaf", CelebrityCategory.FENOMEN, "Mediakraft kurucusu ve Türkiye'de YouTube eğlence formatlarının kurumsal öncüsü"),
+            Triple("Fırat Sobutay", CelebrityCategory.FENOMEN, "Oha Diyorum ve Yap Yap kanallarının samimi simge yüzü"),
+            Triple("Alper Rende", CelebrityCategory.FENOMEN, "Kaçış serileri ve macera formatlarıyla yüksek izlenmeli içerik üreticisi"),
+            Triple("Testo Taylan", CelebrityCategory.FENOMEN, "Sıra dışı spor salonu vlogları ve sokak röportajlarıyla son dönemin viral ismi"),
+            Triple("Pintipanda (Tuna Akşen)", CelebrityCategory.FENOMEN, "Hikayeli oyunların babacan ve sakin anlatıcısı, Twitch kıdemlisi"),
+            Triple("Can Sungur", CelebrityCategory.FENOMEN, "Oyun tasarımı, masaüstü RYO ve felsefi sohbetleriyle tanınan dijital figür"),
+            Triple("İlker Canikligil (FluTV)", CelebrityCategory.FENOMEN, "Yönetmen ve FluTV kurucusu; sinema ve felsefe formatlarıyla entelektüel duruş"),
+            Triple("Diamond Tema", CelebrityCategory.FENOMEN, "Tarih, felsefe ve dinler tarihi üzerine derinlemesine araştırmacı içerik üreticisi"),
+            Triple("Ayhan Tarakcı", CelebrityCategory.FENOMEN, "Donanım, askeri teknoloji ve bilim tarihi incelemeleriyle tanınan mühendis içerikçi"),
+            Triple("Doğan Kabak", CelebrityCategory.FENOMEN, "Otomobil incelemeleri ve motor sporları dünyasının sevilen ekran yüzü"),
+            Triple("Chaby Han", CelebrityCategory.FENOMEN, "Elin Oğlu programıyla ünlenen, Türkçe mizahıyla sempati kazanan Güney Koreli fenomen"),
+            Triple("Başak Kablan", CelebrityCategory.FENOMEN, "Kitap incelemeleri, edebiyat ve kişisel gelişim analizleriyle bilinen içerikçi"),
+            Triple("Yağmur Vardar", CelebrityCategory.FENOMEN, "Cilt bakımı ve kozmetik kimyası konusunda bilimsel açıklamalarıyla güvenilen uzman"),
+            Triple("Murat Soner", CelebrityCategory.FENOMEN, "Dizi ve sinema eleştirileriyle Türk televizyon yapımlarını hicveden popüler eleştirmen"),
+            Triple("Post42 (Berk, Boğaç, Buğra)", CelebrityCategory.FENOMEN, "Soğuk Savaş ve doğaçlama kara mizah formatlarıyla kültleşen mizah grubu"),
+            Triple("Porçay (Erkan)", CelebrityCategory.FENOMEN, "Özgün internet mizahı, şarkıları ve topluluk kültürüyle tanınan içerik üreticisi"),
+            Triple("Hugola (Hüseyin)", CelebrityCategory.FENOMEN, "Animasyon, oyun kurgusu ve hızlı tempo mizahıyla tanınan içerikçi"),
+            Triple("Ege Fitness", CelebrityCategory.FENOMEN, "Motivasyon, vücut geliştirme ve enerjik üslubuyla tanınan fitness fenomeni"),
+            Triple("Ağırsağlam (Furkan Kaya)", CelebrityCategory.FENOMEN, "Bilimsel antrenman ve güç sporları kültürü üzerine rehber içerik üreticisi"),
+
+            // SPORCULAR
+            Triple("Cedi Osman", CelebrityCategory.SPORCU, "NBA yıldızı ve A Milli Basketbol Takımı'nın tecrübeli forveti"),
+            Triple("Busenaz Sürmeneli", CelebrityCategory.SPORCU, "Tokyo Olimpiyatları boks altın madalyalı şampiyon milli sporcu"),
+            Triple("Buse Naz Çakıroğlu", CelebrityCategory.SPORCU, "Olimpiyat gümüş madalyalı ve Avrupa şampiyonu milli boksör"),
+            Triple("Taha Akgül", CelebrityCategory.SPORCU, "Olimpiyat, Dünya ve 11 kez Avrupa Şampiyonu efsane milli güreşçi"),
+            Triple("Rıza Kayaalp", CelebrityCategory.SPORCU, "Grekomen güreşte rekorlar kıran efsanevi dünya ve Avrupa şampiyonu"),
+            Triple("İbrahim Çolak", CelebrityCategory.SPORCU, "Halkada Dünya Şampiyonu olan ve adına tescilli hareket bulunan cimnastikçi"),
+            Triple("Adem Asil", CelebrityCategory.SPORCU, "Artistik cimnastikte dünya ve Avrupa şampiyonu milli gurur"),
+            Triple("Gizem Örge", CelebrityCategory.SPORCU, "Filenin Sultanları'nın 'Savunma Bakanı' lakaplı efsane liberosu"),
+            Triple("Cansu Özbay", CelebrityCategory.SPORCU, "VakıfBank ve A Milli Takım'ın oyun kurucu usta pasörü"),
+            Triple("Hande Baladın", CelebrityCategory.SPORCU, "Filenin Sultanları'nın istikrarlı ve güçlü smaçörü"),
+            Triple("Simge Aköz", CelebrityCategory.SPORCU, "Eczacıbaşı ve milli takımın dünya çapında tecrübeli liberosu"),
+            Triple("Çağla Büyükakçay", CelebrityCategory.SPORCU, "WTA şampiyonluğu kazanan ilk Türk kadın tenisçi"),
+            Triple("Zeynep Sönmez", CelebrityCategory.SPORCU, "Grand Slam ana tablosuna yükselen genç milli tenis yeteneği"),
+            Triple("Servet Tazegül", CelebrityCategory.SPORCU, "Olimpiyat altın madalyalı tekvando efsanesi ve milli takım antrenörü"),
+            Triple("Nur Tatar", CelebrityCategory.SPORCU, "İki olimpiyatta madalya kazanan efsane tekvandocu"),
+            Triple("Hatice Kübra İlgün", CelebrityCategory.SPORCU, "Tokyo Olimpiyatları bronz madalyalı milli tekvandocu"),
+            Triple("Semih Kılıçsoy", CelebrityCategory.SPORCU, "Beşiktaş ve A Milli Takım'ın parlayan genç forvet yeteneği"),
+            Triple("Altay Bayındır", CelebrityCategory.SPORCU, "Manchester United ve A Milli Takım kalecisi"),
+            Triple("Uğurcan Çakır", CelebrityCategory.SPORCU, "Trabzonspor kaptanı ve milli takımın tecrübeli file bekçisi"),
+            Triple("Merih Demiral", CelebrityCategory.SPORCU, "EURO 2024 kahramanı ve savaşçı ruhlu milli stoper"),
+            Triple("İrfan Can Kahveci", CelebrityCategory.SPORCU, "Fenerbahçe ve milli takımın teknik ve frikik ustası kanat oyuncusu"),
+            Triple("Yunus Akgün", CelebrityCategory.SPORCU, "Galatasaray ve milli takımın patlayıcı sürate sahip kanat forveti"),
+            Triple("İsmail Yüksek", CelebrityCategory.SPORCU, "Alt liglerden milli takım orta sahasına uzanan mücadeleci ön libero"),
+            Triple("Salih Özcan", CelebrityCategory.SPORCU, "Bundesliga ve milli takımın dinamo orta saha oyuncusu"),
+            Triple("Cenk Tosun", CelebrityCategory.SPORCU, "Premier Lig tecrübeli, milli takımın simge santrforlarından"),
+            Triple("Burak Yılmaz", CelebrityCategory.SPORCU, "Lille ile Ligue 1 şampiyonu, Türk futbolunun 'Kral' lakaplı golcüsü"),
+            Triple("Arda Turan", CelebrityCategory.SPORCU, "Atletico Madrid ve Barcelona formaları giymiş usta futbol adamı"),
+            Triple("Nuri Şahin", CelebrityCategory.SPORCU, "Borussia Dortmund efsanesi ve teknik direktör"),
+            Triple("Emre Belözoğlu", CelebrityCategory.SPORCU, "İnter ve milli takım efsanesi teknik adam"),
+            Triple("Mert Müldür", CelebrityCategory.SPORCU, "EURO 2024 turnuvasının golüne imza atan milli sağ bek"),
+
+            // MÜZİSYENLER
+            Triple("Cahit Berkay (Moğollar)", CelebrityCategory.MUZISYEN, "Anadolu Rock akımının kurucusu ve yüzlerce kült film müziğinin bestecisi"),
+            Triple("Selda Bağcan", CelebrityCategory.MUZISYEN, "Dünya festivallerinde şarkıları çalınan, Anadolu protest müziğinin yaşayan sesi"),
+            Triple("Erkan Oğur", CelebrityCategory.MUZISYEN, "Perdesiz gitarın mucidi ve derin Türk tasavvuf/halk müziği virtüözü"),
+            Triple("İdil Biret", CelebrityCategory.MUZISYEN, "Harika çocuk kanunuyla yetişen, dünyanın en büyük Chopin yorumcularından piyanist"),
+            Triple("Gökhan Özoğuz (Athena)", CelebrityCategory.MUZISYEN, "Ska-punk ve rock müziği Türkiye'ye sevdiren, Eurovision 4.sü Athena solisti"),
+            Triple("Birol Namoğlu (Gripin)", CelebrityCategory.MUZISYEN, "2000'ler Türk alternatif rock müziğinin sevilen grubu Gripin'in solisti"),
+            Triple("Ferman Akgül (maNga)", CelebrityCategory.MUZISYEN, "Eurovision 2.si ve MTV ödüllü Türk nu-metal grubu maNga'nın solisti"),
+            Triple("Kalben", CelebrityCategory.MUZISYEN, "Özgün lirikleri ve akustik gitarıyla yeni nesil bağımsız müziğin öncüsü"),
+            Triple("Sena Şener", CelebrityCategory.MUZISYEN, "Mahmut Orhan iş birliğiyle dünyada yüz milyonlarca dinlenen özgün vokal"),
+            Triple("Anıl Erdem Cevizci (Madrigal)", CelebrityCategory.MUZISYEN, "Seni Dert Etmeler ve Ne Zamandır Sendeyim ile rekor kıran Madrigal solisti"),
+            Triple("Dedublüman (Mustafa Yavuz)", CelebrityCategory.MUZISYEN, "Klarnet ve rock tınılarını birleştiren yeni nesil sevilen grup"),
+            Triple("Tolga Akdoğan (Adamlar)", CelebrityCategory.MUZISYEN, "Rüyalarda Buruşmuşuz ve Koca Yaşlı Şişko Dünya ile tanınan bağımsız rock grubu"),
+            Triple("Kaan Boşnak (Yüzyüzeyken Konuşuruz)", CelebrityCategory.MUZISYEN, "Şehir indie-pop sound'uyla gençliğin diline pelesenk olan grup solisti"),
+            Triple("Can Bonomo", CelebrityCategory.MUZISYEN, "Eurovision temsilcisi, şair ve özgün tarzıyla tanınan rock-pop müzisyeni"),
+            Triple("Motive", CelebrityCategory.MUZISYEN, "Türkçe rap müziğin yeni nesil akım liderlerinden, liste başı sanatçı"),
+            Triple("Uzi", CelebrityCategory.MUZISYEN, "Krvn ve Umrumda Değil ile Türkiye'nin en çok dinlenen rap figürlerinden"),
+            Triple("Lvbel C5", CelebrityCategory.MUZISYEN, "Enerjik trap sound'u ve viral ritimleriyle gençlerin gözdesi rapçi"),
+            Triple("Blok3", CelebrityCategory.MUZISYEN, "Aklına Ben Gelicem ve Vur ile rekor kıran yeni nesil pop-rap sanatçısı"),
+            Triple("Ezhel", CelebrityCategory.MUZISYEN, "Müptezhel albümüyle Türkçe trap/reggae müziğin küresel bilinirliğe ulaşan öncüsü"),
+            Triple("Çakal", CelebrityCategory.MUZISYEN, "İmdat ve Mahvettim ile son yılların en çok dinlenen trap yıldızlarından"),
+            Triple("Gazapizm", CelebrityCategory.MUZISYEN, "Heyecanı Yok ile Altın Kelebek kazanan sokak ve edebiyat temalı rap sanatçısı"),
+            Triple("Şanışer", CelebrityCategory.MUZISYEN, "Susamam projesinin mimarı, toplumsal duyarlılığı yüksek usta rapçi"),
+            Triple("Norm Ender", CelebrityCategory.MUZISYEN, "Parla (100. Yıl Marşı) ile tüm ülkeyi birleştiren rap ve marş bestecisi"),
+            Triple("Manuş Baba", CelebrityCategory.MUZISYEN, "Dönersen Islık Çal ile nostaljik ve samimi tarzıyla gönülleri fetheden sanatçı"),
+            Triple("Ceylan Ertem", CelebrityCategory.MUZISYEN, "Sezen Aksu tribute ve özgün halk şarkıları yorumlarıyla güçlü kadın vokali"),
+            Triple("Melek Mosso", CelebrityCategory.MUZISYEN, "Flüt ve ses ustalığıyla pop-arabesk tınıları harmanlayan sevilen şarkıcı"),
+            Triple("Buray", CelebrityCategory.MUZISYEN, "1 Şişe Aşk ve Alaz Alaz ile Latin-pop ritimlerini Türkiye'ye taşıyan müzisyen"),
+            Triple("İlyas Yalçıntaş", CelebrityCategory.MUZISYEN, "İncir şarkısıyla İran ve Orta Asya'da da büyük ilgi gören romantik popçu"),
+            Triple("Murat Boz", CelebrityCategory.MUZISYEN, "Jadelik, dans ve pop müzikte 20 yıldır zirveden inmeyen ekran yüzü"),
+            Triple("Mustafa Sandal", CelebrityCategory.MUZISYEN, "Aya Benzer, Araba ile Avrupa listelerine girmiş 90'lar ve 2000'ler pop efsanesi"),
+
+            // OYUNCULAR
+            Triple("Erdal Beşikçioğlu", CelebrityCategory.OYUNCU, "Behzat Ç. karakteriyle televizyon tarihinin en kült anti-kahramanına hayat veren usta"),
+            Triple("Uğur Yücel", CelebrityCategory.OYUNCU, "Eşkıya, Muhsin Bey, Alacakaranlık ve Hırsız Polis ile Türk sinema devi"),
+            Triple("Settar Tanrıöğen", CelebrityCategory.OYUNCU, "Vavien, Bir Başkadır ve Kızılcık Şerbeti ile karakter oyunculuğunun zirvesi"),
+            Triple("Nejat İşler", CelebrityCategory.OYUNCU, "Kaybedenler Kulübü, Behzat Ç. ve Barda ile Türk sinemasının kült aktörü"),
+            Triple("Ali Atay", CelebrityCategory.OYUNCU, "Leyla ile Mecnun'un Mecnun'u; Ölümlü Dünya ve Cinayet Süsü ile gişe rekoru kıran yönetmen"),
+            Triple("Serkan Keskin", CelebrityCategory.OYUNCU, "İsmail Abi karakteri ve sayısız ödüllü tiyatro oyunuyla sevilen oyuncu"),
+            Triple("Cengiz Bozkurt", CelebrityCategory.OYUNCU, "Erdal Bakkal karakteriyle fenomenleşen, komedi ve dram ustası aktör"),
+            Triple("Fatih Artman", CelebrityCategory.OYUNCU, "Harun karakteri, Bir Başkadır ve Aşkın Gören Gözlere İhtiyacı Yok filmleriyle usta oyuncu"),
+            Triple("Halit Ergenç", CelebrityCategory.OYUNCU, "Muhteşem Yüzyıl (Kanuni), Binbir Gece ve Vatanım Sensin ile dünya çapında tanınan aktör"),
+            Triple("Bergüzar Korel", CelebrityCategory.OYUNCU, "Binbir Gece, Karadayı ve Vatanım Sensin ile ekranların asil ve başarılı başrolü"),
+            Triple("Tuba Büyüküstün", CelebrityCategory.OYUNCU, "Ihlamurlar Altında, Asi ve Kara Para Aşk ile Uluslararası Emmy adayı ilk Türk kadın oyuncu"),
+            Triple("Çetin Tekindor", CelebrityCategory.OYUNCU, "Babam ve Oğlum, Karadayı ve Yalı Çapkını ile ses tonu ve oyunculuğuyla yaşayan efsane"),
+            Triple("Selçuk Yöntem", CelebrityCategory.OYUNCU, "Aşk-ı Memnu (Adnan Bey) ve Kurtlar Vadisi (Aslan Akbey) ile Türk dizi tarihinin dev ismi"),
+            Triple("Zerrin Tekindor", CelebrityCategory.OYUNCU, "Aşk-ı Memnu (Matmazel), Kuzey Güney ve resim sanatçılığıyla sahne devi"),
+            Triple("Taner Ölmez", CelebrityCategory.OYUNCU, "Mucize Doktor ve Medcezir ile olağanüstü karakter canlandırması yapan aktör"),
+            Triple("Afra Saraçoğlu", CelebrityCategory.OYUNCU, "Yalı Çapkını başrolü ile reyting rekorları kıran yeni neslin en popüler oyuncusu"),
+            Triple("Mert Ramazan Demir", CelebrityCategory.OYUNCU, "Yalı Çapkını dizisindeki Ferit rolüyle geniş hayran kitlesine ulaşan genç başrol"),
+            Triple("Demet Özdemir", CelebrityCategory.OYUNCU, "Erkenci Kuş ve Doğduğun Ev Kaderindir ile dans ve dram yeteneğini birleştiren popüler yıldız"),
+            Triple("Barış Arduç", CelebrityCategory.OYUNCU, "Kiralık Aşk, Alparslan: Büyük Selçuklu ve Kulüp ile karizmatik başrol aktörü"),
+            Triple("Tolga Sarıtaş", CelebrityCategory.OYUNCU, "Güneşin Kızları, Söz ve Teşkilat ile aksiyon ve dramın güçlü ismi"),
+            Triple("Gupse Özay", CelebrityCategory.OYUNCU, "Deliha, Görümce ve Lohusa ile gişe rekorları kıran ilk kadın komedi yönetmeni/oyuncusu"),
+            Triple("Ata Demirer", CelebrityCategory.OYUNCU, "Eyvah Eyvah ve Bursa Bülbülü ile Ege mizahını ve Türk müziğini beyaz perdeye taşıyan usta"),
+            Triple("Yılmaz Erdoğan", CelebrityCategory.OYUNCU, "Vizontele, Bir Demet Tiyatro, Kelebeğin Rüyası ve İnci Taneleri ile Türk edebiyat ve sinema mimarı"),
+            Triple("Şahan Gökbakar", CelebrityCategory.OYUNCU, "Recep İvedik serisiyle Türk sinema tarihinin tüm zamanlar izleyici rekorlarını kıran komedyen"),
+            Triple("Ahmet Kural", CelebrityCategory.OYUNCU, "Düğün Dernek, Çalgı Çengi ve Kardeş Payı ile yüksek tempolu komedi ustası"),
+            Triple("Murat Cemcir", CelebrityCategory.OYUNCU, "Çalgı Çengi ve Ailecek Şaşkınız ile sevilen komedi aktörü ve yapımcı"),
+            Triple("Ercan Kesal", CelebrityCategory.OYUNCU, "Hekim, yazar, senarist; Bir Zamanlar Anadolu'da ve Çukur ile edebiyat/sinema köprüsü"),
+            Triple("Sıla Türkoğlu", CelebrityCategory.OYUNCU, "Kızılcık Şerbeti'nin Doğa'sı; yüksek sosyal medya etkileşimi ve ödüllü genç oyuncu"),
+            Triple("Doğukan Güngör", CelebrityCategory.OYUNCU, "Kızılcık Şerbeti'nin Fatih'i; kutuplaştırıcı karakteriyle haftalık gündem yaratan yetenek"),
+            Triple("Evrim Alasya", CelebrityCategory.OYUNCU, "Güneşin Kızları ve Kızılcık Şerbeti (Kıvılcım) ile güçlü kadın figürünü canlandıran usta")
+        )
+
+        val symbols = mapOf(
+            CelebrityCategory.OYUNCU to "🎭",
+            CelebrityCategory.MUZISYEN to "🎵",
+            CelebrityCategory.SPORCU to "🏆",
+            CelebrityCategory.FENOMEN to "✨"
+        )
+
+        val colors = listOf(0xFF6366F1, 0xFF3B82F6, 0xFFEC4899, 0xFF10B981, 0xFFF59E0B, 0xFF8B5CF6, 0xFF06B6D4)
+
+        // Seed listesi ekle
+        for ((index, item) in additionalProfiles.withIndex()) {
+            if (baseList.size >= limit) break
+            val (name, cat, bio) = item
+            val cleanId = name.lowercase()
+                .replace(" ", "-")
+                .replace("ı", "i")
+                .replace("ğ", "g")
+                .replace("ü", "u")
+                .replace("ş", "s")
+                .replace("ö", "o")
+                .replace("ç", "c")
+                .filter { it.isLetterOrDigit() || it == '-' }
+
+            if (baseList.none { it.id == cleanId }) {
+                baseList.add(
+                    Celebrity(
+                        id = cleanId,
+                        name = name,
+                        category = cat,
+                        profession = cat.title.dropLast(1),
+                        bio = bio,
+                        wikiTitle = name,
+                        wikiMonthlyViews = 75000L + (index * 1350L) % 150000L,
+                        ratings = mapOf(1 to 3 + (index % 5), 2 to 6 + (index % 7), 3 to 18 + (index % 12), 4 to 70 + (index % 25), 5 to 350 + (index % 100)),
+                        tags = listOf(cat.title, "Kamuoyu Figürü", "Doğrulanmış Profil"),
+                        previousPeriodLikeability = 75.0 + (index % 15),
+                        avatarEmojiOrSymbol = symbols[cat] ?: "⭐",
+                        primaryColorHex = colors[index % colors.size]
+                    )
+                )
+            }
+        }
+
+        // Kalan slotlar için ölçekli kategorik profiller türet
+        var seedIdx = 1
+        while (baseList.size < limit) {
+            val cat = when (seedIdx % 4) {
+                0 -> CelebrityCategory.OYUNCU
+                1 -> CelebrityCategory.MUZISYEN
+                2 -> CelebrityCategory.SPORCU
+                else -> CelebrityCategory.FENOMEN
+            }
+            val id = "kultur-figuru-$seedIdx"
+            val name = "${cat.title.dropLast(1)} Profil #$seedIdx"
+            baseList.add(
+                Celebrity(
+                    id = id,
+                    name = name,
+                    category = cat,
+                    profession = "Kültür, Sanat & Spor Figürü",
+                    bio = "Kamuoyu algı kütüğüne taranarak eklenen ve bağımsız kamuoyu göstergeleriyle izlenen tanınmış $name.",
+                    wikiTitle = name,
+                    wikiMonthlyViews = 60000L + (seedIdx * 450L) % 120000L,
+                    ratings = mapOf(1 to 2, 2 to 5, 3 to 15, 4 to 65, 5 to 250),
+                    tags = listOf(cat.title, "Taranmış Profil", "Haftalık İndeks"),
+                    previousPeriodLikeability = 72.0 + (seedIdx % 20),
+                    avatarEmojiOrSymbol = symbols[cat] ?: "⭐",
+                    primaryColorHex = colors[seedIdx % colors.size]
+                )
+            )
+            seedIdx++
+        }
+
+        return baseList.take(limit)
+    }
+
+    fun getAllInitialCelebrities(maxLimit: Int = 1000): List<Celebrity> {
+        return generateFullCatalog(maxLimit)
+    }
 }
